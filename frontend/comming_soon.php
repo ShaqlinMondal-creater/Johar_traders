@@ -48,7 +48,7 @@
     <!-- Blinking text -->
     <p class="blink text-m mt-4 text-blue-900">Launching shortly... stay tuned!</p>
     <br><br>
-    <a href="index.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-6 py-2 mt-4 rounded-lg text-xs md:text-lg transition-colors">Go Home</a>
+    <a href="index.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-6 py-2 mt-4 rounded-lg text-xs md:text-lg transition-colors">Go back to Homepage</a>
     <!-- Optional: Cloud Animations -->
     <div class="absolute top-10 left-10 opacity-30 animate-pulse">
       <svg class="w-32 h-32 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
