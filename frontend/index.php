@@ -53,63 +53,53 @@
             <div class="overflow-hidden">
                 <div class="product-slider" id="featuredSlider">
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <img src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                        <img src="Johar_traders_uploads/placeholder.png"
                             alt="Mixie Machine" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                         <h3 class=" text-base md:text-lg mb-2">Mixie Machine</h3>
                         <p class="text-gray-600 text-sm mb-3">High-quality kitchen mixie for all your grinding needs</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹2,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹2,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                        <img src="Johar_traders_uploads/placeholder.png"
                             alt="Food Processor" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                         <h3 class=" text-base md:text-lg mb-2">Food Processor</h3>
                         <p class="text-gray-600 text-sm mb-3">Multi-functional food processor for modern kitchens</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹4,599</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹4,599</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <img src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                        <img src="Johar_traders_uploads/placeholder.png"
                             alt="Grinding Machine" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                         <h3 class=" text-base md:text-lg mb-2">Grinding Machine</h3>
                         <p class="text-gray-600 text-sm mb-3">Professional grinding machine for commercial use</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹8,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹8,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <img src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                        <img src="Johar_traders_uploads/placeholder.png"
                             alt="Chatna Machine" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                         <h3 class=" text-base md:text-lg mb-2">Chatna Machine</h3>
                         <p class="text-gray-600 text-sm mb-3">Specialized machine for making fresh chutneys</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹3,499</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,499</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
-                        <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                        <img src="Johar_traders_uploads/placeholder.png"
                             alt="Noodle Machine" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                         <h3 class=" text-base md:text-lg mb-2">Noodle Machine</h3>
                         <p class="text-gray-600 text-sm mb-3">Automatic noodle making machine for restaurants</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹12,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹12,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                 </div>
@@ -143,7 +133,7 @@
                 <div class="product-slider" id="bestsellingSlider">
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Premium Mixie" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs ">Best
@@ -152,15 +142,13 @@
                         <h3 class=" text-base md:text-lg mb-2">Premium Mixie</h3>
                         <p class="text-gray-600 text-sm mb-3">Top-rated mixie with 5-star customer reviews</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹3,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Commercial Grinder" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs ">Best
@@ -169,15 +157,13 @@
                         <h3 class=" text-base md:text-lg mb-2">Commercial Grinder</h3>
                         <p class="text-gray-600 text-sm mb-3">Heavy-duty grinder for commercial kitchens</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹15,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹15,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Multi-Purpose Processor" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs ">Best
@@ -186,15 +172,13 @@
                         <h3 class=" text-base md:text-lg mb-2">Multi-Purpose Processor</h3>
                         <p class="text-gray-600 text-sm mb-3">Versatile food processor with multiple attachments</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹6,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹6,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Professional Blender" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs ">Best
@@ -203,9 +187,24 @@
                         <h3 class=" text-base md:text-lg mb-2">Professional Blender</h3>
                         <p class="text-gray-600 text-sm mb-3">High-speed blender for smoothies and shakes</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹5,499</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹5,499</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
+                                to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="Johar_traders_uploads/placeholder.png"
+                                alt="Professional Blender" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
+                            <span
+                                class="absolute top-2 left-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs ">Best
+                                Seller</span>
+                        </div>
+                        <h3 class=" text-base md:text-lg mb-2">Blender</h3>
+                        <p class="text-gray-600 text-sm mb-3">High-speed blender for smoothies and shakes</p>
+                        <div class="flex justify-between items-center">
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹5,499</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
                                 to Cart</button>
                         </div>
                     </div>
@@ -240,7 +239,7 @@
                 <div class="product-slider" id="newproductsSlider">
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Smart Mixie" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs ">New</span>
@@ -248,15 +247,13 @@
                         <h3 class=" text-base md:text-lg mb-2">Smart Mixie 2024</h3>
                         <p class="text-gray-600 text-sm mb-3">Latest smart mixie with digital controls</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹4,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹4,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="AI Food Processor" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs ">New</span>
@@ -264,15 +261,13 @@
                         <h3 class=" text-base md:text-lg mb-2">AI Food Processor</h3>
                         <p class="text-gray-600 text-sm mb-3">AI-powered food processor with recipe suggestions</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹9,999</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹9,999</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Eco Grinder" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs ">New</span>
@@ -280,15 +275,13 @@
                         <h3 class=" text-base md:text-lg mb-2">Eco Grinder Pro</h3>
                         <p class="text-gray-600 text-sm mb-3">Energy-efficient grinder with eco-friendly design</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹7,499</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹7,499</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
                         <div class="relative">
-                            <img src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1"
+                            <img src="Johar_traders_uploads/placeholder.png"
                                 alt="Compact Processor" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                             <span
                                 class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs ">New</span>
@@ -296,10 +289,36 @@
                         <h3 class=" text-base md:text-lg mb-2">Compact Processor</h3>
                         <p class="text-gray-600 text-sm mb-3">Space-saving processor perfect for small kitchens</p>
                         <div class="flex justify-between items-center">
-                            <span class="text-orange-600  text-lg md:text-xl">₹3,299</span>
-                            <button
-                                class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">Add
-                                to Cart</button>
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,299</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="Johar_traders_uploads/placeholder.png"
+                                alt="Compact Processor" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
+                            <span
+                                class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs ">New</span>
+                        </div>
+                        <h3 class=" text-base md:text-lg mb-2">Compact Processor II</h3>
+                        <p class="text-gray-600 text-sm mb-3">Space-saving processor perfect for small kitchens</p>
+                        <div class="flex justify-between items-center">
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,299</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <div class="relative">
+                            <img src="Johar_traders_uploads/placeholder.png"
+                                alt="Compact Processor" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
+                            <span
+                                class="absolute top-2 left-2 bg-green-500 text-white px-2 py-1 rounded-full text-xs ">New</span>
+                        </div>
+                        <h3 class=" text-base md:text-lg mb-2">Compact Processor Professional</h3>
+                        <p class="text-gray-600 text-sm mb-3">Space-saving processor perfect for small kitchens</p>
+                        <div class="flex justify-between items-center">
+                            <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,299</span> -->
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</button>
                         </div>
                     </div>
                 </div>
