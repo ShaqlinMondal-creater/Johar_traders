@@ -59,7 +59,7 @@
                         <p class="text-gray-600 text-sm mb-3">High-quality kitchen mixie for all your grinding needs</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹2,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -69,7 +69,7 @@
                         <p class="text-gray-600 text-sm mb-3">Multi-functional food processor for modern kitchens</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹4,599</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -79,7 +79,7 @@
                         <p class="text-gray-600 text-sm mb-3">Professional grinding machine for commercial use</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹8,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -89,7 +89,7 @@
                         <p class="text-gray-600 text-sm mb-3">Specialized machine for making fresh chutneys</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,499</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-100 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -99,7 +99,7 @@
                         <p class="text-gray-600 text-sm mb-3">Automatic noodle making machine for restaurants</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹12,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +143,7 @@
                         <p class="text-gray-600 text-sm mb-3">Top-rated mixie with 5-star customer reviews</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -158,7 +158,7 @@
                         <p class="text-gray-600 text-sm mb-3">Heavy-duty grinder for commercial kitchens</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹15,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -173,7 +173,7 @@
                         <p class="text-gray-600 text-sm mb-3">Versatile food processor with multiple attachments</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹6,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -248,7 +248,7 @@
                         <p class="text-gray-600 text-sm mb-3">Latest smart mixie with digital controls</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹4,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -262,7 +262,7 @@
                         <p class="text-gray-600 text-sm mb-3">AI-powered food processor with recipe suggestions</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹9,999</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -276,7 +276,7 @@
                         <p class="text-gray-600 text-sm mb-3">Energy-efficient grinder with eco-friendly design</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹7,499</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -290,7 +290,7 @@
                         <p class="text-gray-600 text-sm mb-3">Space-saving processor perfect for small kitchens</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,299</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -304,7 +304,7 @@
                         <p class="text-gray-600 text-sm mb-3">Space-saving processor perfect for small kitchens</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,299</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                     <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
@@ -318,7 +318,7 @@
                         <p class="text-gray-600 text-sm mb-3">Space-saving processor perfect for small kitchens</p>
                         <div class="flex justify-between items-center">
                             <!-- <span class="text-orange-600  text-lg md:text-xl">₹3,299</span> -->
-                            <a href="under_construction.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                            <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                         </div>
                     </div>
                 </div>

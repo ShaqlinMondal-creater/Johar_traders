@@ -74,17 +74,17 @@
                             <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">
                                 Electronics</h3>
                             <ul class="space-y-2">
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Smartphones</a>
                                 </li>
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Laptops</a></li>
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Tablets</a></li>
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Headphones</a>
                                 </li>
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Cameras</a></li>
                             </ul>
                         </div>
@@ -94,15 +94,15 @@
                             <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">Kitchen
                                 Appliances</h3>
                             <ul class="space-y-2">
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Mixie
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Mixie
                                         Machine</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Grinding &
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Grinding &
                                         Pulverizers</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Chatna
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Chatna
                                         Machines</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Food
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Food
                                         Processors</a></li>
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Blenders</a></li>
                             </ul>
                         </div>
@@ -112,15 +112,15 @@
                             <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">Food
                                 Processing</h3>
                             <ul class="space-y-2">
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Namkeen
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Namkeen
                                         Machines</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Noodle
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Noodle
                                         Machines</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Sewai
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Sewai
                                         Machines</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Pasta
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Pasta
                                         Machines</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Snack
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Snack
                                         Makers</a></li>
                             </ul>
                         </div>
@@ -130,16 +130,16 @@
                             <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">Home
                                 Appliances</h3>
                             <ul class="space-y-2">
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Washing
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Washing
                                         Machines</a></li>
-                                <li><a href="#"
+                                <li><a href="under_construction.php" 
                                         class="text-gray-700 hover:text-orange-600 transition-colors">Refrigerators</a>
                                 </li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Air
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Air
                                         Conditioners</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Vacuum
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Vacuum
                                         Cleaners</a></li>
-                                <li><a href="#" class="text-gray-700 hover:text-orange-600 transition-colors">Water
+                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Water
                                         Heaters</a></li>
                             </ul>
                         </div>
@@ -149,19 +149,19 @@
 
             <!-- Navigation Links - Desktop -->
             <ul class="hidden md:flex desk_ul_navi">
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Home</a>
                 </li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Flash
                         Sale</a></li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Blogs</a>
                 </li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
                         Brands</a></li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
                         Categories</a></li>
             </ul>
@@ -178,19 +178,19 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="mobile-menu md:hidden bg-orange-600 border-t border-orange-500">
             <ul class="py-2">
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Home</a>
                 </li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Flash
                         Sale</a></li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Blogs</a>
                 </li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
                         Brands</a></li>
-                <li><a href="#"
+                <li><a href="under_construction.php" 
                         class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
                         Categories</a></li>
             </ul>
