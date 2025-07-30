@@ -411,7 +411,7 @@
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         // Sidebar navigation
         function showSection(sectionId) {
             // Hide all sections
@@ -461,7 +461,181 @@
                 }
             });
         });
-    </script>
+    </script> -->
+
+<script>
+
+    const ad_role = localStorage.getItem('user_role');
+    const ad_token = localStorage.getItem('auth_token');
+
+    // If not logged in or role != admin, redirect
+    if (!ad_role || !ad_token ) {
+        alert("Not Okay");
+        // window.location.href = "../frontend/login.php";
+    }else{
+        alert("okay");
+    }
+    // --- 1) DASHBOARD DATA LOADER ---
+    async function loadDashboardData() {
+        // const dash_role = localStorage.getItem('user_role');
+        // const dash_token = localStorage.getItem('auth_token');
+        const apiUrl = `<?php echo $BASE_URL_LOCAL; ?>/dashboard_api.php?token=${encodeURIComponent(ad_token)}&role=${encodeURIComponent(ad_role)}`;
+        console.log(ad_token);
+        try {
+            const response = await fetch(apiUrl, { method: 'POST' });
+            const result = await response.json();
+
+            if (result.status === "success" && result.data) {
+                document.getElementById('totalProducts').textContent = result.data.total_products || 0;
+                document.getElementById('totalCategories').textContent = result.data.total_categories || 0;
+                document.getElementById('totalUsers').textContent = result.data.total_users || 0;
+                document.getElementById('totalOrders').textContent = "00"; // Static for now
+            } else {
+                console.warn('Dashboard API returned error:', result);
+            }
+        } catch (error) {
+            console.error('Error fetching dashboard data:', error);
+        }
+    }
+
+    // --- 2) PRODUCTS DATA LOADER ---
+    async function loadProductsData() {
+        const role = localStorage.getItem('role') || 'admin';
+        const token = localStorage.getItem('token') || ']WY3{v%263t>Xw3PZ%uYHwA(B8';
+        const apiUrl = `<?php echo $BASE_URL_LOCAL; ?>/products_api.php?token=${encodeURIComponent(token)}&role=${encodeURIComponent(role)}`;
+
+        try {
+            const response = await fetch(apiUrl, { method: 'POST' });
+            const result = await response.json();
+
+            if (result.status === 'success' && Array.isArray(result.data)) {
+                const products = result.data;
+                const tbody = document.querySelector('#products tbody');
+                tbody.innerHTML = ''; // Clear existing rows
+
+                products.forEach(product => {
+                    tbody.innerHTML += `
+                        <tr class="table-row border-b">
+                            <td class="py-3 px-4">
+                                <img src="${product.image}" class="w-12 h-12 rounded-lg object-cover" alt="${product.name}">
+                            </td>
+                            <td class="py-3 px-4 font-semibold">${product.name}</td>
+                            <td class="py-3 px-4">${product.category}</td>
+                            <td class="py-3 px-4">₹${product.price}</td>
+                            <td class="py-3 px-4">${product.stock}</td>
+                            <td class="py-3 px-4">
+                                <span class="px-2 py-1 rounded-full text-sm ${product.status === 'Active' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
+                                    ${product.status}
+                                </span>
+                            </td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="text-blue-600 hover:text-blue-800">Edit</button>
+                                    <button class="text-red-600 hover:text-red-800">Delete</button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+            } else {
+                console.warn('Products API returned error:', result);
+            }
+        } catch (error) {
+            console.error('Error fetching products data:', error);
+        }
+    }
+
+    // --- 3) CATEGORIES DATA LOADER ---
+    async function loadCategoriesData() {
+        const role = localStorage.getItem('role') || 'admin';
+        const token = localStorage.getItem('token') || ']WY3{v%263t>Xw3PZ%uYHwA(B8';
+        const apiUrl = `<?php echo $BASE_URL_LOCAL; ?>/categories_api.php?token=${encodeURIComponent(token)}&role=${encodeURIComponent(role)}`;
+
+        try {
+            const response = await fetch(apiUrl, { method: 'POST' });
+            const result = await response.json();
+
+            if (result.status === 'success' && Array.isArray(result.data)) {
+                const categories = result.data;
+                const container = document.querySelector('#categories .grid');
+                container.innerHTML = ''; // Clear existing categories
+
+                categories.forEach(category => {
+                    container.innerHTML += `
+                        <div class="bg-white rounded-lg shadow-lg p-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-lg font-semibold">${category.name}</h3>
+                                <div class="flex gap-2">
+                                    <button class="text-blue-600 hover:text-blue-800">Edit</button>
+                                    <button class="text-red-600 hover:text-red-800">Delete</button>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 mb-2">Products: ${category.product_count}</p>
+                            <p class="text-sm text-gray-500">${category.description}</p>
+                        </div>
+                    `;
+                });
+            } else {
+                console.warn('Categories API returned error:', result);
+            }
+        } catch (error) {
+            console.error('Error fetching categories data:', error);
+        }
+    }
+
+    // --- 4) SIDEBAR NAVIGATION ---
+    function showSection(sectionId) {
+        document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+        document.querySelectorAll('.sidebar-item').forEach(item => item.classList.remove('active'));
+
+        document.getElementById(sectionId).classList.add('active');
+        event.target.classList.add('active');
+
+        // Load API data based on section
+        if (sectionId === 'dashboard') loadDashboardData();
+        if (sectionId === 'products') loadProductsData();
+        if (sectionId === 'categories') loadCategoriesData();
+    }
+
+    // --- 5) INITIAL DASHBOARD LOAD ---
+    document.addEventListener('DOMContentLoaded', () => {
+        loadDashboardData();
+    });
+</script>
+
+<script>
+    // Modal functions
+    function openModal(modalId) {
+        document.getElementById(modalId).classList.add('active');
+    }
+
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.remove('active');
+    }
+
+    // Close modal when clicking outside
+    document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+            }
+        });
+    });
+
+    // Sample data and interactions
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click handlers for edit/delete buttons
+        document.querySelectorAll('button').forEach(button => {
+            if (button.textContent.includes('Edit') || button.textContent.includes('Delete') || 
+                button.textContent.includes('View') || button.textContent.includes('Update')) {
+                button.addEventListener('click', function() {
+                    console.log('Action clicked:', this.textContent);
+                });
+            }
+        });
+    });
+</script>
+
     <?php include "section_js/script.php"; ?>
 </body>
 </html>
