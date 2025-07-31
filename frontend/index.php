@@ -334,18 +334,18 @@
     const categoryIds = [10, 2, 9]; // your category IDs
     const categorySectionContainer = document.getElementById("dynamic-category-sections");
 
-    function scrollProducts(sectionId, direction) {
-        const container = document.getElementById(`${sectionId}Slider`);
-        const scrollAmount = 300;
-        container.scrollBy({
-            left: direction === 'left' ? -scrollAmount : scrollAmount,
-            behavior: 'smooth'
-        });
-    }
+    // function scrollProducts(sectionId, direction) {
+    //     const container = document.getElementById(`${sectionId}Slider`);
+    //     const scrollAmount = 300;
+    //     container.scrollBy({
+    //         left: direction === 'left' ? -scrollAmount : scrollAmount,
+    //         behavior: 'smooth'
+    //     });
+    // }
 
     async function loadCategorySections() {
         try {
-            const response = await fetch(`<?php echo $BASE_URL_LOCAL; ?>/products/get_products_by_category.php`, {
+            const response = await fetch(`<?php echo $BASE_URL_LOCAL; ?>/backend/apis/products/get_products_by_category.php`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ category_id: categoryIds.join(", ") })
