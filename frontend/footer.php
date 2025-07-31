@@ -356,10 +356,14 @@
                                 ? product.photos.split(",")[0].trim() || 'Johar_traders_uploads/placeholder.png'
                                 : 'Johar_traders_uploads/placeholder.png';
 
+                            const displayName = product.name.length > 25 
+                                ? product.name.slice(0, 25) + '...' 
+                                : product.name;
+
                             html += `
                                 <div class="product-card bg-gray-100 rounded-lg p-4 min-w-[240px] hover:shadow-lg transition-shadow">
                                     <img src="Johar_traders_uploads/product/${firstImage}" alt="${product.name}" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
-                                    <h3 class="text-base md:text-sm mb-2">${product.name}</h3>
+                                    <h3 class="text-base md:text-sm mb-2">${displayName}</h3>
                                     <p class="text-gray-600 text-sm mb-3">SKU: ${product.sku}</p>
                                     <div class="flex justify-between items-center">
                                         <a href="product-detail.php?slug=${product.slug}" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
