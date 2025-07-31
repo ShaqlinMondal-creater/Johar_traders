@@ -277,7 +277,7 @@
 </script>
 
 <!-- Get users Data -->
- <script>
+<script>
     let custCurrentPage = 1;
     let custTotalPages = 1;
     const custLimit = 10;

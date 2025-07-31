@@ -1,23 +1,6 @@
 <?php include("header.php"); ?>
 
 <style>
-    /* .category-modal {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        min-width: 400px;
-        width: max-content;
-        background: white;
-        box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        z-index: 50;
-        max-height: 400px;
-        overflow-y: auto;
-        border-radius: 8px;
-    }
-        */
-
-
     .categories-dropdown:hover .category-modal {
         display: block;
     }
@@ -114,6 +97,7 @@
                 </div>
                 <div class="filter-content active" id="categories-content">
                     <div class="p-4">
+                        
                         <!-- Kitchen Appliances -->
                         <div class="mb-4">
                             <div class="font-semibold text-gray-800 mb-2">Kitchen Appliances</div>
@@ -170,6 +154,7 @@
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>

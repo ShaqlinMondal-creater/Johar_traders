@@ -315,7 +315,7 @@
 
         async function loadCategorySections() {
             try {
-                const response = await fetch(`<?php echo $BASE_URL_LOCAL; ?>/backend/apis/products/get_products_by_category.php`, {
+                const response = await fetch(`<?php echo $BASE_URL_LOCAL; ?>/products/get_products_by_category.php`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ category_id: categoryIds.join(", ") })
