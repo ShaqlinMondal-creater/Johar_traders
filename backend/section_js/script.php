@@ -104,12 +104,18 @@
                 const products = result.data;
                 const tbody = document.querySelector('#products tbody');
                 tbody.innerHTML = '';
+                
 
                 products.forEach(product => {
+                    const firstImage = product.photos.split(",")[0];
+                    const imageSrc = firstImage
+                        ? `../frontend/Johar_traders_uploads/product/${firstImage}`
+                        : `../frontend/Johar_traders_uploads/placeholder.png`;
+
                     tbody.innerHTML += `
                         <tr class="table-row border-b">
                             <td class="py-3 px-4">
-                                <img src="${product.image_link || '../frontend/Johar_traders_uploads/placeholder.png'}" class="w-12 h-12 rounded-lg object-cover" alt="${product.name}">
+                                <img src="${imageSrc}" class="w-12 h-12 rounded-lg object-cover" alt="${product.name}">
                             </td>
                             <td class="py-3 px-4 font-semibold">${product.name}</td>
                             <td class="py-3 px-4">${product.category.category_name || 'N/A'}</td>
