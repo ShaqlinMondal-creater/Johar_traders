@@ -82,7 +82,8 @@
                     `;
 
                     category.products.forEach(product => {
-                        const firstImage = product.image_link.split(",")[0];
+                        // const firstImage = product.image_link.split(",")[0];
+                        const firstImage = "Johar_traders_uploads/placeholder.png";
                         html += `
                             <div class="product-card bg-gray-100 rounded-lg p-4 min-w-[240px] hover:shadow-lg transition-shadow">
                                 <img src="${firstImage}" alt="${product.name}" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
