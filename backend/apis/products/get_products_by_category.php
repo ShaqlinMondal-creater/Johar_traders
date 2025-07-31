@@ -35,7 +35,7 @@ foreach ($category_ids as $category_id) {
     // Fetch category info + 10 products
     $query = "
         SELECT 
-            p.id, p.name, p.sku, p.slug, p.image_link, p.unit_price, p.category_id,
+            p.id, p.name, p.sku, p.slug, p.image_link, p.photos, p.unit_price, p.category_id,
             c.name AS category_name, c.slug AS category_slug
         FROM products p
         LEFT JOIN categories c ON p.category_id = c.id
@@ -60,6 +60,7 @@ foreach ($category_ids as $category_id) {
                     'sku'        => $p['sku'],
                     'slug'       => $p['slug'],
                     'image_link' => $p['image_link'],
+                    'photos' => $p['photos'],
                     'unit_price' => $p['unit_price']
                 ];
             }, $products)

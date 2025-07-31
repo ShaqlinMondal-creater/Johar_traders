@@ -86,7 +86,7 @@
                         // const firstImage = "Johar_traders_uploads/placeholder.png";
                         html += `
                             <div class="product-card bg-gray-100 rounded-lg p-4 min-w-[240px] hover:shadow-lg transition-shadow">
-                                <img src="${firstImage}" alt="${product.name}" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
+                                <img src="Johar_traders_uploads/product/${firstImage}" alt="${product.name}" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                                 <h3 class="text-base md:text-lg mb-2">${product.name}</h3>
                                 <p class="text-gray-600 text-sm mb-3">SKU: ${product.sku}</p>
                                 <div class="flex justify-between items-center">

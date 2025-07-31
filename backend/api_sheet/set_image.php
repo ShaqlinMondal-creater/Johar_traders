@@ -1,6 +1,6 @@
 <?php
 // $mysqli = new mysqli("localhost", "root", "", "jt_local"); // For Local
-$mysqli = new mysqli("localhost", "jt_laravel", "7s4^d2Cq1", "jt_laravel"); // // For Live
+$mysqli = new mysqli("127.0.0.1", "jt_laravel", "7s4^d2Cq1", "jt_laravel"); // // For Live
 
 // Fetch all products
 $result = $mysqli->query("SELECT id, image_link FROM products");
