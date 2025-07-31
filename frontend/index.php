@@ -331,7 +331,7 @@
 </div>
 
 <script>
-    const categoryIds = [10, 2, 9]; // your category IDs
+    const categoryIds = [45, 35, 13, 2, 33]; // your category IDs
     const categorySectionContainer = document.getElementById("dynamic-category-sections");
 
     function scrollCategoryProducts(sectionId, direction) {
