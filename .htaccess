@@ -1,9 +1,14 @@
-# Enable rewrite engine
+# Enable mod_rewrite
 RewriteEngine On
 
-# Force HTTPS
+# Force HTTPS (optional)
 RewriteCond %{HTTPS} off
 RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect base URL to /frontend/
-RewriteRule ^$ frontend/ [L]
+# Set index.php as default
+DirectoryIndex index.php
+
+# Clean URL routing (optional, good for MVC frameworks or custom routing)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)$ index.php [QSA,L]
