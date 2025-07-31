@@ -368,7 +368,7 @@
                                 ? product.name.slice(0, 25) + '...' 
                                 : product.name;
                     productsGrid.innerHTML += `
-                        <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
+                        <div class="shop-product-card border border-orange-300 rounded-lg p-2 mt-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
                             <a href="under_construction?slug=${product.slug}">
                                 <div class="relative mb-4">
                                     <img src="${imageSrc}" alt="${displayName}" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
