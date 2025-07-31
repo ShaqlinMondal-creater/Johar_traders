@@ -334,14 +334,14 @@
     const categoryIds = [10, 2, 9]; // your category IDs
     const categorySectionContainer = document.getElementById("dynamic-category-sections");
 
-    // function scrollProducts(sectionId, direction) {
-    //     const container = document.getElementById(`${sectionId}Slider`);
-    //     const scrollAmount = 300;
-    //     container.scrollBy({
-    //         left: direction === 'left' ? -scrollAmount : scrollAmount,
-    //         behavior: 'smooth'
-    //     });
-    // }
+    function scrollCategoryProducts(sectionId, direction) {
+        const container = document.getElementById(`${sectionId}Slider`);
+        const scrollAmount = 300;
+        container.scrollBy({
+            left: direction === 'left' ? -scrollAmount : scrollAmount,
+            behavior: 'smooth'
+        });
+    }
 
     async function loadCategorySections() {
         try {
@@ -362,12 +362,12 @@
                         <div class="flex justify-between items-center mb-4 md:mb-6">
                             <h2 class="text-xl md:text-2xl text-gray-800">${category.category_name}</h2>
                             <div class="flex gap-2">
-                                <button onclick=\"scrollProducts('${sectionId}', 'left')\" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full">
+                                <button onclick=\"scrollCategoryProducts('${sectionId}', 'left')\" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
                                     </svg>
                                 </button>
-                                <button onclick=\"scrollProducts('${sectionId}', 'right')\" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full">
+                                <button onclick=\"scrollCategoryProducts('${sectionId}', 'right')\" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full">
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
                                     </svg>
@@ -375,7 +375,7 @@
                             </div>
                         </div>
                         <div class="overflow-hidden">
-                            <div class="flex gap-4 overflow-x-auto pb-2" id="${sectionId}Slider">
+                            <div class="flex gap-4 overflow-x-hidden pb-2" id="${sectionId}Slider">
                     `;
 
                     category.products.forEach(product => {
