@@ -95,57 +95,6 @@
         </div>
     </div>
 
-    <script>
-        // Sidebar navigation
-        function showSection(sectionId) {
-            // Hide all sections
-            document.querySelectorAll('.content-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Remove active class from all sidebar items
-            document.querySelectorAll('.sidebar-item').forEach(item => {
-                item.classList.remove('active');
-            });
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-            
-            // Add active class to clicked sidebar item
-            event.target.classList.add('active');
-        }
-
-        // Modal functions
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-        }
-
-        // Close modal when clicking outside
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.addEventListener('click', function(e) {
-                if (e.target === this) {
-                    this.classList.remove('active');
-                }
-            });
-        });
-
-        // Sample data and interactions
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click handlers for edit/delete buttons
-            document.querySelectorAll('button').forEach(button => {
-                if (button.textContent.includes('Edit') || button.textContent.includes('Delete') || 
-                    button.textContent.includes('View') || button.textContent.includes('Update')) {
-                    button.addEventListener('click', function() {
-                        console.log('Action clicked:', this.textContent);
-                    });
-                }
-            });
-        });
-    </script>
     <?php include "section_js/script.php"; ?>
 </body>
 </html>

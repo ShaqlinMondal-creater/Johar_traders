@@ -117,6 +117,7 @@
 
         <!-- Right Side - Products -->
         <div class="flex-1">
+            
             <!-- Breadcrumb and Sort -->
             <div class="bg-white rounded-lg p-2 mb-2">
                 <div class="flex justify-between items-center">

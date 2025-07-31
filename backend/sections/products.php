@@ -1,4 +1,4 @@
-<div id="products" class="content-section">
+<div id="products" class="content-section ">
     <div class="flex justify-between items-center mb-6">
         <div>
             <h2 class="text-3xl font-bold text-gray-800 mb-2">Products</h2>
@@ -22,82 +22,28 @@
             </div>
         </div>
         
-        <div class="overflow-x-auto">
-            <table class="w-full">
+        <div class="overflow-x-auto max-h-[500px] overflow-y-auto">
+            <table class="w-full min-w-[800px]">
                 <thead>
                     <tr class="border-b">
                         <th class="text-left py-3 px-4">Image</th>
                         <th class="text-left py-3 px-4">Product Name</th>
                         <th class="text-left py-3 px-4">Category</th>
-                        <th class="text-left py-3 px-4">Price</th>
+                        <th class="text-left py-3 px-4">Brand</th>
                         <th class="text-left py-3 px-4">Stock</th>
                         <th class="text-left py-3 px-4">Status</th>
                         <th class="text-left py-3 px-4">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="table-row border-b">
-                        <td class="py-3 px-4">
-                            <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="py-3 px-4 font-semibold">Coconut Scrapper Machine</td>
-                        <td class="py-3 px-4">Kitchen Appliances</td>
-                        <td class="py-3 px-4">₹2,999</td>
-                        <td class="py-3 px-4">25</td>
-                        <td class="py-3 px-4"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Active</span></td>
-                        <td class="py-3 px-4">
-                            <div class="flex gap-2">
-                                <button class="text-blue-600 hover:text-blue-800">Edit</button>
-                                <button class="text-red-600 hover:text-red-800">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-row border-b">
-                        <td class="py-3 px-4">
-                            <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="py-3 px-4 font-semibold">Ice Cube Maker WOI-45</td>
-                        <td class="py-3 px-4">Cooling Equipment</td>
-                        <td class="py-3 px-4">₹15,999</td>
-                        <td class="py-3 px-4">12</td>
-                        <td class="py-3 px-4"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm">Active</span></td>
-                        <td class="py-3 px-4">
-                            <div class="flex gap-2">
-                                <button class="text-blue-600 hover:text-blue-800">Edit</button>
-                                <button class="text-red-600 hover:text-red-800">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr class="table-row">
-                        <td class="py-3 px-4">
-                            <div class="w-12 h-12 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                        </td>
-                        <td class="py-3 px-4 font-semibold">Drinking Water Cooler</td>
-                        <td class="py-3 px-4">Cooling Equipment</td>
-                        <td class="py-3 px-4">₹8,499</td>
-                        <td class="py-3 px-4">8</td>
-                        <td class="py-3 px-4"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-sm">Low Stock</span></td>
-                        <td class="py-3 px-4">
-                            <div class="flex gap-2">
-                                <button class="text-blue-600 hover:text-blue-800">Edit</button>
-                                <button class="text-red-600 hover:text-red-800">Delete</button>
-                            </div>
-                        </td>
-                    </tr>
+                    <!--  -->
                 </tbody>
             </table>
+            <div id="pagination" class="flex justify-between items-center mt-4 flex-wrap gap-4 text-sm">
+                <button id="product-prevPage" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Prev</button>
+                <div id="pageInfo" class="text-gray-700">Page 1 of 1</div>
+                <button id="product-nextPage" class="px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">Next</button>
+            </div>
         </div>
     </div>
 </div>
