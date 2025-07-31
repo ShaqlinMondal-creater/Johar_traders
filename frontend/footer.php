@@ -332,7 +332,7 @@
                             <div class="flex justify-between items-center mb-4 md:mb-6">
                                 <h2 class="text-xl md:text-2xl text-gray-800">${category.category_name}</h2>
                                 <div class="flex gap-2">
-                                    <a href="category-products.php?slug=${category.category_slug}" class="text-sm text-orange-600 hover:underline">View All</a>
+                                    <a href="under_construction?slug=${category.category_slug}" class="text-sm text-orange-600 mt-2 hover:underline">View All</a>
                                     <button onclick=\"scrollCategoryProducts('${sectionId}', 'left')\" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -366,7 +366,7 @@
                                     <h3 class="text-base md:text-sm mb-2">${displayName}</h3>
                                     <p class="text-gray-600 text-sm mb-3">SKU: ${product.sku}</p>
                                     <div class="flex justify-between items-center">
-                                        <a href="product-detail.php?slug=${product.slug}" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                                        <a href="under_construction?slug=${product.slug}" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                                     </div>
                                 </div>
                             `;
