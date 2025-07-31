@@ -1,5 +1,5 @@
 
-<!-- Footer -->
+    <!-- Footer -->
     <footer class="text-white mt-16 footer">
         <div class="max-w-7xl mx-auto px-5 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -147,9 +147,9 @@
                         <div class="text-center text-white px-4">
                             <h2 class="text-2xl md:text-4xl mb-2 md:mb-4">${slide.title}</h2>
                             <p class="text-base md:text-xl mb-4 md:mb-6">${slide.description}</p>
-                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg transition-colors">
+                            <a href="comming_soon" class="bg-orange-600 hover:bg-orange-700 text-white px-6 md:px-8 py-2 md:py-3 rounded-lg transition-colors">
                                 ${slide.buttonText}
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -378,7 +378,7 @@
 
         document.addEventListener("DOMContentLoaded", loadCategorySections);
     </script>
-    
+
 </body>
 
 </html>

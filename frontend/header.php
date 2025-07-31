@@ -149,21 +149,24 @@
 
             <!-- Navigation Links - Desktop -->
             <ul class="hidden md:flex desk_ul_navi">
-                <li><a href="under_construction.php" 
-                        class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Home</a>
+                <li>
+                    <a href="index" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Home</a>
                 </li>
-                <li><a href="under_construction.php" 
-                        class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Flash
-                        Sale</a></li>
-                <li><a href="under_construction.php" 
-                        class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Blogs</a>
+                <li>
+                    <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">About Us</a>
                 </li>
-                <li><a href="under_construction.php" 
-                        class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
-                        Brands</a></li>
-                <li><a href="under_construction.php" 
-                        class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
-                        Categories</a></li>
+                <li>
+                    <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Exhibitions</a>
+                </li>
+                <li>
+                    <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Clients</a>
+                </li>
+                <li>
+                    <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Brands</a>
+                </li>
+                <li>
+                    <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Contact Us</a>
+                </li>
             </ul>
 
             <!-- Mobile Menu Button -->
@@ -178,21 +181,24 @@
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="mobile-menu md:hidden bg-orange-600 border-t border-orange-500">
             <ul class="py-2">
-                <li><a href="under_construction.php" 
+                <li><a href="index" 
                         class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Home</a>
                 </li>
-                <li><a href="under_construction.php" 
-                        class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Flash
-                        Sale</a></li>
-                <li><a href="under_construction.php" 
-                        class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Blogs</a>
+                <li>
+                    <a href="under_construction.php"  class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">About Us</a>
                 </li>
-                <li><a href="under_construction.php" 
-                        class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
-                        Brands</a></li>
-                <li><a href="under_construction.php" 
-                        class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">All
-                        Categories</a></li>
+                <li>
+                    <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Exhibitions</a>
+                </li>
+                <li>
+                    <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Clients</a>
+                </li>
+                <li>
+                    <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Brands</a>
+                </li>
+                <li>
+                    <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Contact Us</a>
+                </li>
             </ul>
         </div>
     </nav>
