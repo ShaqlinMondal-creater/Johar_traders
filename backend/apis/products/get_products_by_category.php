@@ -1,10 +1,12 @@
 <?php
-$input = file_get_contents("php://input");
+$input = json_decode(file_get_contents("php://input"), true);
+$category_input = $input['category_id'] ?? '';
 
-file_put_contents('debug_input.log', $input);
+if (empty($category_input)) {
+    echo json_encode([
+        'status' => 'error',
+        'message' => 'category_id is required.'
+    ]);
+    exit;
+}
 
-header('Content-Type: application/json');
-echo json_encode([
-    'received_raw' => $input,
-    'decoded' => json_decode($input, true)
-]);
