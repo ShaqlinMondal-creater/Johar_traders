@@ -206,7 +206,7 @@
 
     </script>
     
-    <!-- Products Slider Section  -->
+    <!-- Static Products Slider Section  -->
     <script>
         // Initialize positions for each section
         const sliderPositions = {
@@ -332,6 +332,7 @@
                             <div class="flex justify-between items-center mb-4 md:mb-6">
                                 <h2 class="text-xl md:text-2xl text-gray-800">${category.category_name}</h2>
                                 <div class="flex gap-2">
+                                    <a href="category-products.php?slug=${category.category_slug}" class="text-sm text-orange-600 hover:underline">View All</a>
                                     <button onclick=\"scrollCategoryProducts('${sectionId}', 'left')\" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full">
                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
@@ -356,14 +357,14 @@
                                 : 'Johar_traders_uploads/placeholder.png';
 
                             html += `
-                                <div class="product-card bg-gray-100 rounded-lg p-4 min-w-[240px] hover:shadow-lg transition-shadow">
+                                <a href="product-detail.php?slug=${product.slug}" class="product-card bg-gray-100 rounded-lg p-4 min-w-[240px] hover:shadow-lg transition-shadow">
                                     <img src="Johar_traders_uploads/product/${firstImage}" alt="${product.name}" class="w-full h-40 md:h-48 object-cover rounded-lg mb-4">
                                     <h3 class="text-base md:text-lg mb-2">${product.name}</h3>
                                     <p class="text-gray-600 text-sm mb-3">SKU: ${product.sku}</p>
                                     <div class="flex justify-between items-center">
                                         <a href="comming_soon.php" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                                     </div>
-                                </div>
+                                </a>
                             `;
                         });
 
