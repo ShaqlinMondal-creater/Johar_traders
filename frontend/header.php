@@ -162,7 +162,7 @@
                     <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Clients</a>
                 </li>
                 <li>
-                    <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Brands</a>
+                    <a href="shop" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Brands</a>
                 </li>
                 <li>
                     <a href="under_construction.php" class="text-white px-4 lg:px-6 py-4  text-sm lg:text-base hover:bg-black hover:bg-opacity-20 transition-colors">Contact Us</a>
@@ -194,7 +194,7 @@
                     <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Clients</a>
                 </li>
                 <li>
-                    <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Brands</a>
+                    <a href="shop" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Brands</a>
                 </li>
                 <li>
                     <a href="under_construction.php" class="block text-white px-6 py-3  text-base hover:bg-black hover:bg-opacity-20 transition-colors">Contact Us</a>
