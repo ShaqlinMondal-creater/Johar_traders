@@ -1,21 +1,23 @@
 <?php
-include('../connection/db_connect.php');
+include('../../../connection/db_connect.php');
 header('Content-Type: application/json');
 
-// Auth params
+// 1. Get token and role from query string
 $token = $_GET['token'] ?? '';
 $role  = $_GET['role'] ?? '';
 
-// Pagination
-$limit  = isset($_GET['limit']) ? max(1, intval($_GET['limit'])) : 10;
-$offset = isset($_GET['offset']) ? max(0, intval($_GET['offset'])) : 0;
+// 2. Parse POST body JSON
+$input = json_decode(file_get_contents("php://input"), true);
 
-// Filters
-$filter_user_name  = $_GET['user_name'] ?? null;
-$filter_email      = $_GET['email'] ?? null;
-$filter_role       = $_GET['filter_role'] ?? null;
-$filter_loggedin   = $_GET['is_loggedin'] ?? null;
+// Extract filters and pagination from body
+$filter_user_name  = $input['user_name'] ?? null;
+$filter_name      = $input['name'] ?? null;
+$filter_role       = $input['filter_role'] ?? null;
+$filter_loggedin   = $input['is_loggedin'] ?? null;
+$limit             = isset($input['limit']) ? max(1, intval($input['limit'])) : 10;
+$offset            = isset($input['offset']) ? max(0, intval($input['offset'])) : 0;
 
+// 3. Validate admin access
 if (empty($token) || $role !== 'admin') {
     echo json_encode([
         'status' => 'error',
@@ -25,7 +27,7 @@ if (empty($token) || $role !== 'admin') {
 }
 
 try {
-    // Verify token is a logged-in admin
+    // Check if token is valid and belongs to logged-in admin
     $auth = $pdo->prepare("SELECT * FROM users WHERE token = :token AND role = 'admin' AND is_loggedin = '1'");
     $auth->execute([':token' => $token]);
     $admin = $auth->fetch(PDO::FETCH_ASSOC);
@@ -38,7 +40,7 @@ try {
         exit;
     }
 
-    // Build WHERE clause and bind values
+    // 4. Build filtered query
     $where = "1";
     $params = [];
 
@@ -47,9 +49,9 @@ try {
         $params[':user_name'] = "%$filter_user_name%";
     }
 
-    if ($filter_email) {
-        $where .= " AND email LIKE :email";
-        $params[':email'] = "%$filter_email%";
+    if ($filter_name) {
+        $where .= " AND name LIKE :name";
+        $params[':name'] = "%$filter_name%";
     }
 
     if ($filter_role) {
@@ -62,16 +64,15 @@ try {
         $params[':is_loggedin'] = $filter_loggedin;
     }
 
-    // Main query
+    // 5. Main SELECT query
     $query = "
-        SELECT id, user_name, email, role, is_loggedin, address, mobile, token, created_at
+        SELECT id, name, user_name, role, is_loggedin, address, mobile, token, created_at
         FROM users
         WHERE $where
         LIMIT :limit OFFSET :offset
     ";
 
     $stmt = $pdo->prepare($query);
-
     foreach ($params as $key => $val) {
         $stmt->bindValue($key, $val);
     }
@@ -81,24 +82,23 @@ try {
     $stmt->execute();
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-    // Format users
+    // Format date
     $users = [];
     foreach ($rows as $row) {
-        $formatted_date = date("jS F, Y", strtotime($row['created_at']));
         $users[] = [
             'id'          => $row['id'],
+            'name'        => $row['name'],
             'user_name'   => $row['user_name'],
-            'email'       => $row['email'],
             'role'        => $row['role'],
             'is_loggedin' => $row['is_loggedin'],
             'address'     => $row['address'],
             'mobile'      => $row['mobile'],
             'token'       => $row['token'],
-            'created_at'  => $formatted_date
+            'created_at'  => date("jS F, Y", strtotime($row['created_at']))
         ];
     }
 
-    // Total count
+    // 6. Total count
     $count_query = "SELECT COUNT(*) as total FROM users WHERE $where";
     $count_stmt = $pdo->prepare($count_query);
     foreach ($params as $key => $val) {

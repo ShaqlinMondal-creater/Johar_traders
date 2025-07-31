@@ -30,19 +30,19 @@
                         </button>
                     </li>
                     <li>
-                        <button class="sidebar-item w-full text-left px-4 py-3 rounded-lg transition-colors flex items-center gap-3" onclick="showSection('orders')">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
-                            </svg>
-                            Orders
-                        </button>
-                    </li>
-                    <li>
                         <button class="sidebar-item w-full text-left px-4 py-3 rounded-lg transition-colors flex items-center gap-3" onclick="showSection('customers')">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
                             </svg>
                             Customers
+                        </button>
+                    </li>
+                    <li>
+                        <button class="sidebar-item w-full text-left px-4 py-3 rounded-lg transition-colors flex items-center gap-3" onclick="showSection('orders')">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                            Orders
                         </button>
                     </li>
                     <li>
@@ -78,11 +78,11 @@
             <!-- Categories Section -->
             <?php include("sections/categories.php"); ?>
             
-            <!-- Orders Section -->
-            <?php include("sections/orders.php"); ?>
-
             <!-- Users Section -->
             <?php include("sections/users.php"); ?>
+
+            <!-- Orders Section -->
+            <?php include("sections/orders.php"); ?>
 
             <!-- Analytics Section -->
             <?php include("sections/analytics.php"); ?>
@@ -103,12 +103,13 @@
         document.getElementById(sectionId).classList.add('active');
         event.target.classList.add('active');
 
-        // Load API data based on section
-        if (sectionId === 'dashboard') loadDashboardData();
-        if (sectionId === 'products') {
-            setTimeout(() => loadProductsData(), 1000); // let DOM render pagination buttons
-        }
-        if (sectionId === 'categories') loadCategoriesData();
+            // Load API data based on section
+            if (sectionId === 'dashboard') loadDashboardData();
+            if (sectionId === 'products') {
+                setTimeout(() => loadProductsData(), 1000); // let DOM render pagination buttons
+            }
+            if (sectionId === 'categories') loadCategoriesData();
+            if (sectionId === 'customers') loadCustomersData();
         }
 
     // --- 5) INITIAL DASHBOARD LOAD ---

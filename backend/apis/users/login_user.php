@@ -19,7 +19,7 @@ if (empty($user_name) || empty($password)) {
 
 // Generate a new 24-character random token
 function generateToken($length = 24) {
-    $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+=-[]{}|;:,.<>?';
+    $chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $token = '';
     for ($i = 0; $i < $length; $i++) {
         $token .= $chars[random_int(0, strlen($chars) - 1)];

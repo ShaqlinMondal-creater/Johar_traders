@@ -56,7 +56,7 @@
         // const dash_role = localStorage.getItem('user_role');
         // const dash_token = localStorage.getItem('auth_token');
         const apiUrl = `<?php echo $BASE_URL_LOCAL; ?>/dashboard_api.php?token=${encodeURIComponent(ad_token)}&role=${encodeURIComponent(ad_role)}`;
-        console.log(ad_token);
+        // console.log(ad_token);
         try {
             const response = await fetch(apiUrl, { method: 'POST' });
             const result = await response.json();
@@ -270,3 +270,103 @@
     });
 </script>
 
+<!-- Get users Data -->
+ <script>
+    let custCurrentPage = 1;
+    let custTotalPages = 1;
+    const custLimit = 10;
+
+    async function loadCustomersData(filters = {}) {
+        const apiUrl = `<?php echo $BASE_URL_LOCAL; ?>/users/get_users.php?token=${encodeURIComponent(ad_token)}&role=${encodeURIComponent(ad_role)}`;
+
+        const payload = {
+            ...filters,
+            limit: custLimit,
+            offset: (custCurrentPage - 1) * custLimit
+        };
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            const result = await response.json();
+
+            if (result.status === 'success') {
+                const users = result.data;
+                const tbody = document.getElementById('customer-table-body');
+                tbody.innerHTML = '';
+
+                users.forEach((user, index) => {
+                    tbody.innerHTML += `
+                        <tr class="table-row border-b">
+                            <td class="py-3 px-4">#CUST-${user.id.toString().padStart(3, '0')}</td>
+                            <td class="py-3 px-4 font-semibold">
+                              <span>${user.name}</span>
+                              <br>
+                              <span>${user.user_name}</span>
+                            </td>                            
+                            <td class="py-3 px-4">${user.mobile}</td>
+                            <td class="py-3 px-4">
+                                <span class="px-2 py-1 rounded-full text-sm ${user.is_loggedin == 1 ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}">
+                                    ${user.is_loggedin == 1 ? 'Active' : 'Inactive'}
+                                </span>
+                            </td>
+                            <td class="py-3 px-4"><span class="px-2 py-1 rounded-full text-sm bg-orange-100 text-orange-800">${user.token}</span></td>
+                            <td class="py-3 px-4">${user.role}</td>
+                            <td class="py-3 px-4">${user.created_at}</td>
+                            <td class="py-3 px-4">
+                                <div class="flex gap-2">
+                                    <button class="text-blue-600 hover:text-blue-800">View</button>
+                                    <button class="text-green-600 hover:text-green-800">Edit</button>
+                                </div>
+                            </td>
+                        </tr>
+                    `;
+                });
+
+                // Update pagination
+                custTotalPages = result.pagination.total_pages;
+                document.getElementById('customer-pageInfo').textContent = `Page ${custCurrentPage} of ${custTotalPages}`;
+                document.getElementById('customer-prevPage').disabled = custCurrentPage === 1;
+                document.getElementById('customer-nextPage').disabled = custCurrentPage === custTotalPages;
+            } else {
+                console.warn('Customer API error:', result);
+            }
+        } catch (error) {
+            console.error('Error loading customers:', error);
+        }
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchInput = document.getElementById('customer-search');
+        const prevBtn = document.getElementById('customer-prevPage');
+        const nextBtn = document.getElementById('customer-nextPage');
+
+        if (prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                if (custCurrentPage > 1) {
+                    custCurrentPage--;
+                    loadCustomersData({ user_name: searchInput.value.trim() });
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (custCurrentPage < custTotalPages) {
+                    custCurrentPage++;
+                    loadCustomersData({ user_name: searchInput.value.trim() });
+                }
+            });
+        }
+
+        if (searchInput) {
+            searchInput.addEventListener('input', () => {
+                custCurrentPage = 1;
+                loadCustomersData({ user_name: searchInput.value.trim() });
+            });
+        }
+    });
+</script>
