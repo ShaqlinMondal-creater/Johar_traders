@@ -1,685 +1,347 @@
 <?php include("header.php"); ?>
+<div class="body_section">
+    <style>        
+        .product-slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        
+        .product-card {
+            min-width: 280px;
+            margin-right: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .product-card {
+                min-width: 250px;
+                margin-right: 15px;
+            }
+        }
+                
+        .thumbnail-active {
+            border: 2px solid #ea580c;
+        }
+        
+        .main-image {
+            transition: transform 0.3s ease;
+        }
+        
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+    </style>
+    <!-- Breadcrumb -->
+    <div class="max-w-7xl mx-auto mt-5 px-5">
+        <nav class="text-sm text-gray-600">
+            <a href="index" class="hover:text-orange-600">Home</a>
+            <span class="mx-2">/</span>
+            <a href="#" class="hover:text-orange-600">Kitchen Appliances</a>
+            <span class="mx-2">/</span>
+            <span class="text-gray-800">Premium Mixie Machine</span>
+        </nav>
+    </div>
 
-<style>
-    .categories-dropdown:hover .category-modal {
-        display: block;
-    }
-    
-    .categories-dropdown:hover .dropdown-arrow {
-        transform: rotate(180deg);
-    }
-    
-    .shop-product-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    
-    .pagination-btn.active {
-        background-color: #ff5722;
-        color: white;
-    }
-    
-    .filter-checkbox:checked + label {
-        color: #ff5722;
-        font-weight: 600;
-    }
-    
-    .filter-section {
-        border-bottom: 1px solid #e5e7eb;
-    }
-    
-    .filter-content {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
-    }
-    
-    .filter-content.active {
-        max-height: 300px;
-    }
-    
-    .filter-toggle {
-        transition: transform 0.3s ease;
-    }
-    
-    .filter-toggle.active {
-        transform: rotate(180deg);
-    }
-    
-    .child-category {
-        margin-left: 20px;
-        font-size: 0.9em;
-        color: #6b7280;
-    }
-    
-    .price-range-slider {
-        -webkit-appearance: none;
-        appearance: none;
-        height: 4px;
-        background: #ddd;
-        outline: none;
-        border-radius: 2px;
-    }
-    
-    .price-range-slider::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        appearance: none;
-        width: 20px;
-        height: 20px;
-        background: #ff5722;
-        cursor: pointer;
-        border-radius: 50%;
-    }
-    
-    .price-range-slider::-moz-range-thumb {
-        width: 20px;
-        height: 20px;
-        background: #ff5722;
-        cursor: pointer;
-        border-radius: 50%;
-        border: none;
-    }
-</style>
-
-<div class="body_section">  
-
-    <!-- Main Content -->
-    <div class="max-w-9xl mx-auto mt-5 px-5 flex gap-5">
-        <!-- Left Sidebar - Filters -->
-        <div class="w-80 bg-white rounded-lg shadow-lg h-fit hidden lg:block">
-            <!-- Categories Filter -->
-            <div class="filter-section">
-                <div class="bg-orange-600 text-white p-4 font-bold text-lg rounded-t-lg flex justify-between items-center cursor-pointer" onclick="toggleFilter('categories')">
-                    Categories
-                    <svg class="w-4 h-4 filter-toggle" id="categories-toggle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </div>
-                <div class="filter-content active" id="categories-content">
-                    <div class="p-4">
-                        
-                        <!-- Kitchen Appliances -->
-                        <div class="mb-4">
-                            <div class="font-semibold text-gray-800 mb-2">Kitchen Appliances</div>
-                            <div class="child-category space-y-2">
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="mixie" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="mixie" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Mixie Machine</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="grinding" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="grinding" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Grinding & Pulverizers</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="chatna" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="chatna" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Chatna Machines</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Food Processing -->
-                        <div class="mb-4">
-                            <div class="font-semibold text-gray-800 mb-2">Food Processing</div>
-                            <div class="child-category space-y-2">
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="namkeen" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="namkeen" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Namkeen Machines</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="noodles" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="noodles" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Noodle Machines</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="sewai" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="sewai" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Sewai Machines</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Commercial Equipment -->
-                        <div class="mb-4">
-                            <div class="font-semibold text-gray-800 mb-2">Commercial Equipment</div>
-                            <div class="child-category space-y-2">
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="bone" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="bone" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Bone Saw Machines</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="chicken" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="chicken" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Chicken De-Feathering</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="vegetable" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="vegetable" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Vegetable Cutter</label>
-                                </div>
-                            </div>
-                        </div>
-
+    <!-- Product Detail Section -->
+    <div class="max-w-7xl mx-auto mt-5 px-5">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-6">
+                <!-- Product Images -->
+                <div>
+                    <!-- Main Image -->
+                    <div class="mb-4 overflow-hidden rounded-lg">
+                        <img id="mainImage" 
+                             src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=600&h=600&dpr=1" 
+                             alt="Premium Mixie Machine" 
+                             class="w-full h-64 md:h-96 object-cover main-image">
+                    </div>
+                    
+                    <!-- Thumbnail Images -->
+                    <div class="flex justify-center align-center gap-2 overflow-x-auto">
+                        <img onclick="changeMainImage(this)" 
+                             src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1" 
+                             alt="Mixie Image 1" 
+                             class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg cursor-pointer thumbnail-active hover:opacity-80 transition-opacity">
+                        <img onclick="changeMainImage(this)" 
+                             src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1" 
+                             alt="Mixie Image 2" 
+                             class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity">
+                        <img onclick="changeMainImage(this)" 
+                             src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1" 
+                             alt="Mixie Image 3" 
+                             class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity">
+                        <img onclick="changeMainImage(this)" 
+                             src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&dpr=1" 
+                             alt="Mixie Image 4" 
+                             class="w-16 h-16 md:w-20 md:h-20 object-cover rounded-lg cursor-pointer hover:opacity-80 transition-opacity">
                     </div>
                 </div>
-            </div>
-            
-            <!-- Price Filter -->
-            <div class="filter-section">
-                <div class="bg-gray-100 p-4 font-bold text-gray-800 flex justify-between items-center cursor-pointer" onclick="toggleFilter('price')">
-                    Price Range
-                    <svg class="w-4 h-4 filter-toggle" id="price-toggle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </div>
-                <div class="filter-content" id="price-content">
-                    <div class="p-4">
-                        <div class="mb-4">
-                            <label class="block text-sm font-medium text-gray-700 mb-2">Price Range: $<span id="minPriceDisplay">0</span> - $<span id="maxPriceDisplay">10000</span></label>
-                            <div class="flex items-center space-x-4">
-                                <input type="range" id="minPrice" min="0" max="10000" value="0" class="price-range-slider flex-1">
-                                <input type="range" id="maxPrice" min="0" max="10000" value="10000" class="price-range-slider flex-1">
+                
+                <!-- Product Info -->
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-bold text-gray-800 mb-4">Premium Mixie Machine</h1>
+                    
+                    <!-- Rating -->
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                            <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                                <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/>
+                            </svg>
+                        </div>
+                        <span class="ml-2 text-gray-600">(4.8) 156 Reviews</span>
+                    </div>
+                    
+                    <!-- Price -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-4">
+                            <span class="text-3xl font-bold text-orange-600">₹2,999</span>
+                            <span class="text-xl text-gray-500 line-through">₹4,999</span>
+                            <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-sm font-bold">40% OFF</span>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-1">Inclusive of all taxes</p>
+                    </div>
+                    
+                    <!-- Key Features -->
+                    <div class="mb-6">
+                        <h3 class="font-bold text-lg mb-3">Key Features:</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">750W Powerful Motor</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">3 Stainless Steel Jars</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">Overload Protection</span>
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span class="text-gray-700">2 Year Warranty</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Quantity and Add to Cart -->
+                    <div class="mb-6">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="font-bold">Quantity:</span>
+                            <div class="flex items-center border rounded-lg">
+                                <button onclick="decreaseQuantity()" class="px-3 py-2 hover:bg-gray-100">-</button>
+                                <span id="quantity" class="px-4 py-2 border-x">1</span>
+                                <button onclick="increaseQuantity()" class="px-3 py-2 hover:bg-gray-100">+</button>
                             </div>
                         </div>
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <input type="checkbox" id="price1" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="price1" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Under $100</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="price2" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="price2" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">$100 - $500</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="price3" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="price3" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">$500 - $1000</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="price4" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="price4" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Above $1000</label>
-                            </div>
+                        
+                        <div class="flex flex-col sm:flex-row gap-3">
+                            <button class="flex-1 bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                                Add to Cart
+                            </button>
+                            <button class="flex-1 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold transition-colors">
+                                Buy Now
+                            </button>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Fabric Filter -->
-            <div class="filter-section">
-                <div class="bg-gray-100 p-4 font-bold text-gray-800 flex justify-between items-center cursor-pointer" onclick="toggleFilter('fabric')">
-                    Material/Fabric
-                    <svg class="w-4 h-4 filter-toggle" id="fabric-toggle" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
-                </div>
-                <div class="filter-content" id="fabric-content">
-                    <div class="p-4">
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <input type="checkbox" id="stainless" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="stainless" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Stainless Steel</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="aluminum" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="aluminum" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Aluminum</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="plastic" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="plastic" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Food Grade Plastic</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="cast-iron" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="cast-iron" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Cast Iron</label>
-                            </div>
-                            <div class="flex items-center">
-                                <input type="checkbox" id="ceramic" class="filter-checkbox mr-3 text-orange-600">
-                                <label for="ceramic" class="text-gray-600 cursor-pointer hover:text-orange-600 transition-colors">Ceramic</label>
-                            </div>
+                    
+                    <!-- Additional Info -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm">
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                            </svg>
+                            <span>Free Delivery</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <span>2 Year Warranty</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="w-5 h-5 text-orange-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                            <span>Easy Returns</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Right Side - Products -->
-        <div class="flex-1">
-            <!-- Mobile Filter Button -->
-            <div class="lg:hidden mb-4">
-                <button onclick="toggleMobileFilters()" class="bg-orange-600 text-white px-4 py-2 rounded-lg flex items-center gap-2">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"></path>
-                    </svg>
-                    Filters
-                </button>
+    <!-- Product Description -->
+    <div class="max-w-7xl mx-auto mt-8 px-5">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Product Description</h2>
+            <div class="prose max-w-none">
+                <p class="text-gray-700 mb-4">
+                    The Premium Mixie Machine is designed to meet all your kitchen grinding and mixing needs. With its powerful 750W motor and premium stainless steel jars, this mixie delivers exceptional performance for both wet and dry grinding.
+                </p>
+                <p class="text-gray-700 mb-4">
+                    Whether you're preparing fresh chutneys, grinding spices, or making smooth batters, this versatile kitchen appliance ensures consistent results every time. The ergonomic design and safety features make it perfect for daily use in modern kitchens.
+                </p>
+                
+                <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">What's in the Box:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li>1 x Premium Mixie Machine (750W Motor)</li>
+                    <li>1 x Large Jar (1.5L) - For wet grinding</li>
+                    <li>1 x Medium Jar (1L) - For dry grinding</li>
+                    <li>1 x Small Jar (0.5L) - For chutneys</li>
+                    <li>3 x Stainless Steel Blades</li>
+                    <li>1 x User Manual</li>
+                    <li>1 x Warranty Card</li>
+                </ul>
+                
+                <h3 class="text-xl font-bold text-gray-800 mb-3 mt-6">Benefits:</h3>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li>Saves time with efficient grinding and mixing</li>
+                    <li>Durable construction ensures long-lasting performance</li>
+                    <li>Easy to clean and maintain</li>
+                    <li>Compact design fits perfectly in any kitchen</li>
+                    <li>Energy efficient operation</li>
+                </ul>
             </div>
-            
-            <!-- Mobile Filter Modal -->
-            <div id="mobileFilterModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden lg:hidden">
-                <div class="bg-white w-80 h-full overflow-y-auto">
-                    <div class="p-4 border-b flex justify-between items-center">
-                        <h3 class="text-lg font-bold">Filters</h3>
-                        <button onclick="toggleMobileFilters()" class="text-gray-500">
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                            </svg>
-                        </button>
-                    </div>
-                    <!-- Same filter content as desktop -->
-                    <div class="p-4">
-                        <!-- Categories -->
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-3">Categories</h4>
-                            <div class="space-y-4">
-                                <div>
-                                    <div class="font-semibold text-gray-700 mb-2">Kitchen Appliances</div>
-                                    <div class="ml-4 space-y-2">
-                                        <div class="flex items-center">
-                                            <input type="checkbox" id="mobile-mixie" class="filter-checkbox mr-3 text-orange-600">
-                                            <label for="mobile-mixie" class="text-gray-600">Mixie Machine</label>
-                                        </div>
-                                        <div class="flex items-center">
-                                            <input type="checkbox" id="mobile-grinding" class="filter-checkbox mr-3 text-orange-600">
-                                            <label for="mobile-grinding" class="text-gray-600">Grinding & Pulverizers</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Price Range -->
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-3">Price Range</h4>
-                            <div class="space-y-2">
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="mobile-price1" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="mobile-price1" class="text-gray-600">Under $100</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="mobile-price2" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="mobile-price2" class="text-gray-600">$100 - $500</label>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Material -->
-                        <div class="mb-6">
-                            <h4 class="font-bold text-gray-800 mb-3">Material</h4>
-                            <div class="space-y-2">
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="mobile-stainless" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="mobile-stainless" class="text-gray-600">Stainless Steel</label>
-                                </div>
-                                <div class="flex items-center">
-                                    <input type="checkbox" id="mobile-aluminum" class="filter-checkbox mr-3 text-orange-600">
-                                    <label for="mobile-aluminum" class="text-gray-600">Aluminum</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Breadcrumb and Sort -->
-            <div class="bg-white rounded-lg p-2 mb-2">
-                <div class="flex justify-between items-center">
-                    <div class="text-gray-600">
-                        <a href="index.html" class="hover:text-orange-600 transition-colors">Home</a>
-                        <span class="mx-2">/</span>
-                        <span class="text-gray-800 font-semibold">All Categories</span>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <label for="sort" class="text-gray-700">Sort by</label>
-                        <select id="sort" class="border border-gray-300 rounded px-3 py-1 text-gray-700 focus:outline-none focus:border-orange-600">
-                            <option value="default">Default</option>
-                            <option value="price-low">Price: Low to High</option>
-                            <option value="price-high">Price: High to Low</option>
-                            <option value="name">Name: A to Z</option>
-                            <option value="newest">Newest First</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+        </div>
+    </div>
 
-            <!-- Products Title -->
-            <div class="bg-white rounded-lg p-2 mb-2">
-                <h1 class="text-2xl font-bold text-gray-800">All products</h1>
-            </div>
-
-            <!-- Products Grid -->
-            <div class="bg-white rounded-lg shadow-lg p-6">
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6" id="productsGrid">
-                    <!-- Product Card 1 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Coconut Scrapper Machine</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 2 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Ice Cube Maker WOI-45</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 3 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Drinking Water Cooler</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 4 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Western Visi Cooler SRC 280</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 5 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Commercial Grinder Pro</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 6 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Food Processor Deluxe</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 7 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Mixie Machine Premium</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-
-                    <!-- Product Card 8 -->
-                    <div class="shop-product-card border border-orange-300 rounded-lg p-2 lg:p-4 transition-all duration-300 hover:shadow-lg">
-                        <div class="relative mb-4">
-                            <div class="w-full h-32 lg:h-48 bg-gray-200 rounded-lg flex items-center justify-center">
-                                <svg class="w-8 h-8 lg:w-16 lg:h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
-                            <div class="absolute top-1 right-1 lg:top-2 lg:right-2 flex flex-col gap-1 lg:gap-2">
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                                    </svg>
-                                </button>
-                                <button class="w-6 h-6 lg:w-8 lg:h-8 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors">
-                                    <svg class="w-3 h-3 lg:w-4 lg:h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
-                                    </svg>
-                                </button>
-                            </div>
-                        </div>
-                        <h3 class="font-semibold text-gray-800 mb-2 text-sm lg:text-base">Noodle Making Machine</h3>
-                        <p class="text-orange-600 font-bold text-base lg:text-lg mb-2 lg:mb-3">$0.00</p>
-                        <button class="w-full bg-gray-800 text-white py-1 lg:py-2 rounded-lg hover:bg-gray-700 transition-colors text-sm lg:text-base">
-                            Add to cart
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Pagination -->
-                <div class="flex justify-center items-center mt-6 lg:mt-8 space-x-1 lg:space-x-2">
-                    <button class="pagination-btn px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+    <!-- Related Products Section -->
+    <div class="max-w-9xl mx-auto mt-10 px-5">
+        <div class="bg-white rounded-lg shadow-lg p-6">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800">Related Products</h2>
+                <div class="flex gap-2">
+                    <button onclick="scrollRelatedProducts('left')" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                         </svg>
                     </button>
-                    <button class="pagination-btn active px-3 lg:px-4 py-2 border border-gray-300 rounded-lg transition-colors text-sm lg:text-base">1</button>
-                    <button class="pagination-btn px-3 lg:px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm lg:text-base">2</button>
-                    <button class="pagination-btn px-3 lg:px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm lg:text-base">3</button>
-                    <span class="px-1 lg:px-2 text-gray-500 text-sm lg:text-base">...</span>
-                    <button class="pagination-btn px-3 lg:px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors text-sm lg:text-base">10</button>
-                    <button class="pagination-btn px-3 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+                    <button onclick="scrollRelatedProducts('right')" class="bg-orange-600 hover:bg-orange-700 text-white p-2 rounded-full transition-colors">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
                     </button>
                 </div>
             </div>
+            <div class="overflow-hidden">
+                <div class="product-slider" id="relatedProductsSlider">
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Food Processor" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="font-bold text-lg mb-2">Multi-Purpose Food Processor</h3>
+                        <p class="text-gray-600 text-sm mb-3">Advanced food processor with multiple attachments</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-bold text-xl">₹4,599</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <img src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Grinding Machine" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="font-bold text-lg mb-2">Commercial Grinding Machine</h3>
+                        <p class="text-gray-600 text-sm mb-3">Heavy-duty grinder for commercial use</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-bold text-xl">₹8,999</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <img src="https://images.pexels.com/photos/4226796/pexels-photo-4226796.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Chatna Machine" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="font-bold text-lg mb-2">Automatic Chatna Machine</h3>
+                        <p class="text-gray-600 text-sm mb-3">Perfect for making fresh chutneys</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-bold text-xl">₹3,499</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Blender" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="font-bold text-lg mb-2">High-Speed Blender</h3>
+                        <p class="text-gray-600 text-sm mb-3">Professional blender for smoothies</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-bold text-xl">₹5,499</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                    <div class="product-card bg-gray-50 rounded-lg p-4 hover:shadow-lg transition-shadow">
+                        <img src="https://images.pexels.com/photos/3985062/pexels-photo-3985062.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&dpr=1" alt="Wet Grinder" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="font-bold text-lg mb-2">Traditional Wet Grinder</h3>
+                        <p class="text-gray-600 text-sm mb-3">Stone grinder for authentic taste</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-orange-600 font-bold text-xl">₹6,999</span>
+                            <button class="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg text-sm transition-colors">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>
 
-<script>
-    // Filter toggle functionality
-    function toggleFilter(filterName) {
-        const content = document.getElementById(filterName + '-content');
-        const toggle = document.getElementById(filterName + '-toggle');
+<script>     
+    // Image gallery functionality
+    function changeMainImage(thumbnail) {
+        const mainImage = document.getElementById('mainImage');
+        const thumbnails = document.querySelectorAll('img[onclick="changeMainImage(this)"]');
         
-        content.classList.toggle('active');
-        toggle.classList.toggle('active');
-    }
-    
-    // Mobile filter modal
-    function toggleMobileFilters() {
-        const modal = document.getElementById('mobileFilterModal');
-        modal.classList.toggle('hidden');
-    }
-    
-    // Price range sliders
-    const minPriceSlider = document.getElementById('minPrice');
-    const maxPriceSlider = document.getElementById('maxPrice');
-    const minPriceDisplay = document.getElementById('minPriceDisplay');
-    const maxPriceDisplay = document.getElementById('maxPriceDisplay');
-    
-    if (minPriceSlider && maxPriceSlider) {
-        minPriceSlider.addEventListener('input', function() {
-            minPriceDisplay.textContent = this.value;
-            if (parseInt(this.value) > parseInt(maxPriceSlider.value)) {
-                maxPriceSlider.value = this.value;
-                maxPriceDisplay.textContent = this.value;
-            }
-        });
+        // Update main image
+        mainImage.src = thumbnail.src.replace('w=150&h=150', 'w=600&h=600');
         
-        maxPriceSlider.addEventListener('input', function() {
-            maxPriceDisplay.textContent = this.value;
-            if (parseInt(this.value) < parseInt(minPriceSlider.value)) {
-                minPriceSlider.value = this.value;
-                minPriceDisplay.textContent = this.value;
-            }
-        });
+        // Update active thumbnail
+        thumbnails.forEach(thumb => thumb.classList.remove('thumbnail-active'));
+        thumbnail.classList.add('thumbnail-active');
     }
     
-    // Filter functionality
-    document.querySelectorAll('.filter-checkbox').forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            // Here you would implement the actual filtering logic
-            console.log('Filter changed:', this.id, this.checked);
-        });
-    });
-
-    // Sort functionality
-    document.getElementById('sort').addEventListener('change', function() {
-        // Here you would implement the actual sorting logic
-        console.log('Sort changed:', this.value);
-    });
-
-    // Pagination functionality
-    document.querySelectorAll('.pagination-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            // Remove active class from all buttons
-            document.querySelectorAll('.pagination-btn').forEach(b => {
-                b.classList.remove('active');
-                b.style.backgroundColor = '';
-                b.style.color = '';
-            });
-            
-            // Add active class to clicked button (if it's a number)
-            if (!this.querySelector('svg')) {
-                this.classList.add('active');
-            }
-            
-            console.log('Page changed');
-        });
-    });
-
-    // Add to cart functionality
-    document.querySelectorAll('.shop-product-card button').forEach(btn => {
-        if (btn.textContent.includes('Add to cart')) {
-            btn.addEventListener('click', function() {
-                console.log('Added to cart:', this.closest('.shop-product-card').querySelector('h3').textContent);
-            });
+    // Quantity controls
+    let quantity = 1;
+    
+    function increaseQuantity() {
+        quantity++;
+        document.getElementById('quantity').textContent = quantity;
+    }
+    
+    function decreaseQuantity() {
+        if (quantity > 1) {
+            quantity--;
+            document.getElementById('quantity').textContent = quantity;
         }
-    });
-
-    // Wishlist functionality
-    document.querySelectorAll('.shop-product-card .absolute button').forEach(btn => {
-        btn.addEventListener('click', function() {
-            console.log('Wishlist/Compare clicked');
-        });
-    });
+    }
+    
+    // Related products slider
+    let relatedProductsPosition = 0;
+    
+    function scrollRelatedProducts(direction) {
+        const slider = document.getElementById('relatedProductsSlider');
+        const cardWidth = 300; // 280px + 20px margin
+        const maxScroll = (slider.children.length - 3) * cardWidth; // Show 3 cards at a time
+        
+        if (direction === 'right') {
+            relatedProductsPosition = Math.min(relatedProductsPosition + cardWidth, maxScroll);
+        } else {
+            relatedProductsPosition = Math.max(relatedProductsPosition - cardWidth, 0);
+        }
+        
+        slider.style.transform = `translateX(-${relatedProductsPosition}px)`;
+    }
+    
 </script>
-
-<!-- Footer -->
+    <!-- Footer -->
 <?php include("footer.php"); ?>

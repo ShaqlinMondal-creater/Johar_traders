@@ -1,5 +1,6 @@
 <?php
 include('../../../connection/db_connect.php');
+
 header('Content-Type: application/json');
 
 // Read category_id from request
