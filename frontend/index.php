@@ -196,7 +196,7 @@
                                 <h3 class="text-base md:text-sm mb-2">${displayName}</h3>
                                 <p class="text-gray-600 text-sm mb-3">SKU: ${product.sku}</p>
                                 <div class="flex justify-between items-center">
-                                    <a href="under_construction?slug=${product.slug}" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
+                                    <a href="product-detail?slug=${product.slug}" class="bg-orange-600 hover:bg-orange-700 text-white px-3 md:px-4 py-2 rounded-lg text-xs md:text-sm transition-colors">View Detail</a>
                                 </div>
                             </div>
                         `;

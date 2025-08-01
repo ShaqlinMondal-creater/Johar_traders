@@ -8,6 +8,8 @@
     <link rel="icon" href="Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png">
     <link rel="apple-touch-icon" href="Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add FontAwesome CDN for WhatsApp Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     
 </head>
