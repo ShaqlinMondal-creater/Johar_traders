@@ -47,13 +47,13 @@
             title: "Food Processing Equipment",
             description: "Professional grade machines for your business",
             buttonText: "Explore Products"
-        },
-        {
-            img: "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-            title: "Modern Kitchen Solutions",
-            description: "Transform your kitchen with our latest technology",
-            buttonText: "View Collection"
         }
+        // {
+        //     img: "https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        //     title: "Modern Kitchen Solutions",
+        //     description: "Transform your kitchen with our latest technology",
+        //     buttonText: "View Collection"
+        // }
     ];
 
     let currentSlide = 0;

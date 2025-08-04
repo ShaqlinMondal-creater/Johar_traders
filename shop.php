@@ -362,8 +362,8 @@
                 result.data.forEach((product) => {
                     const firstImage = product.photos.split(",")[0];
                     const imageSrc = firstImage
-                        ? `../frontend/Johar_traders_uploads/product/${firstImage}`
-                        : `../frontend/Johar_traders_uploads/placeholder.png`;
+                        ? `Johar_traders_uploads/product/${firstImage}`
+                        : `Johar_traders_uploads/placeholder.png`;
 
                     const displayName = product.name.length > 25 
                                 ? product.name.slice(0, 25) + '...' 

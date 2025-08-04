@@ -48,10 +48,11 @@
     <nav id="navbar"
         class="bg-orange-600 px-8 transition-all duration-300 sticky top-[140px] md:top-[140px] z-30">
         <div class="flex items-center nav_category_sec">
+
             <!-- Categories Dropdown -->
             <div class="categories-dropdown relative">
                 <button id="categoriesBtn"
-                    class="bg-black bg-opacity-20 text-white px-4 md:px-6 py-4  text-sm md:text-base flex items-center gap-2 hover:bg-opacity-30 transition-colors">
+                    class="bg-black bg-opacity-20 text-white px-4 md:px-6 py-4 text-sm md:text-base flex items-center gap-2 hover:bg-opacity-30 transition-colors">
                     Categories
                     <svg class="w-4 h-4 dropdown-arrow transition-transform duration-300" fill="none"
                         stroke="currentColor" viewBox="0 0 24 24">
@@ -62,7 +63,7 @@
                 <!-- Category Modal -->
                 <div id="categoryModal" class="category-modal">
                     <div class="flex justify-between items-center mb-4 md:hidden">
-                        <h2 class="text-xl  text-orange-600">Categories</h2>
+                        <h2 class="text-xl text-orange-600">Categories</h2>
                         <button id="closeCategoryModal" class="text-gray-600 hover:text-gray-800">
                             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -70,84 +71,12 @@
                             </svg>
                         </button>
                     </div>
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 p-6">
-                        <!-- Electronics Category -->
-                        <div>
-                            <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">
-                                Electronics</h3>
-                            <ul class="space-y-2">
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Smartphones</a>
-                                </li>
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Laptops</a></li>
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Tablets</a></li>
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Headphones</a>
-                                </li>
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Cameras</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Kitchen Appliances Category -->
-                        <div>
-                            <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">Kitchen
-                                Appliances</h3>
-                            <ul class="space-y-2">
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Mixie
-                                        Machine</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Grinding &
-                                        Pulverizers</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Chatna
-                                        Machines</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Food
-                                        Processors</a></li>
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Blenders</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Food Processing Category -->
-                        <div>
-                            <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">Food
-                                Processing</h3>
-                            <ul class="space-y-2">
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Namkeen
-                                        Machines</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Noodle
-                                        Machines</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Sewai
-                                        Machines</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Pasta
-                                        Machines</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Snack
-                                        Makers</a></li>
-                            </ul>
-                        </div>
-
-                        <!-- Home Appliances Category -->
-                        <div>
-                            <h3 class=" text-orange-600 text-lg mb-3 border-b border-orange-200 pb-2">Home
-                                Appliances</h3>
-                            <ul class="space-y-2">
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Washing
-                                        Machines</a></li>
-                                <li><a href="under_construction.php" 
-                                        class="text-gray-700 hover:text-orange-600 transition-colors">Refrigerators</a>
-                                </li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Air
-                                        Conditioners</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Vacuum
-                                        Cleaners</a></li>
-                                <li><a href="under_construction.php"  class="text-gray-700 hover:text-orange-600 transition-colors">Water
-                                        Heaters</a></li>
-                            </ul>
-                        </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6" id="categoryList">
+                        <!-- Categories will be injected here dynamically -->
                     </div>
                 </div>
             </div>
+
 
             <!-- Navigation Links - Desktop -->
             <ul class="hidden md:flex desk_ul_navi">
@@ -204,3 +133,62 @@
             </ul>
         </div>
     </nav>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const baseUrl = "<?php echo $BASE_URL_LOCAL; ?>/categories/get_categories.php";
+        const categoriesListContainer = document.getElementById("categoryList");
+
+        // Fetch categories from the API
+        fetchCategories();
+
+        async function fetchCategories() {
+            const response = await fetch(baseUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ limit: 30 })
+            });
+            const data = await response.json();
+
+            if (data.status === "success") {
+                renderCategories(data.data);
+            } else {
+                console.error("Failed to load categories");
+            }
+        }
+
+        // Render categories dynamically
+        function renderCategories(categories) {
+            categoriesListContainer.innerHTML = ''; // Clear the container
+            categories.forEach(category => {
+                const categoryElement = document.createElement("div");
+                categoryElement.classList.add("category-item");
+
+                const categoryName = category.name;
+                const categorySlug = category.slug;
+
+                categoryElement.innerHTML = `
+                    <ul class="space-y-2">
+                        <li><a href="category_wise_products?category=${categoryName}" 
+                                class="text-gray-700 hover:text-orange-600 transition-colors">${categoryName}</a>
+                        </li>
+                    </ul>
+                `;
+
+                categoriesListContainer.appendChild(categoryElement);
+            });
+        }
+
+        // Handle category modal close
+        document.getElementById("closeCategoryModal").addEventListener("click", function () {
+            document.getElementById("categoryModal").classList.add("hidden");
+        });
+
+        // Show modal when button is clicked
+        document.getElementById("categoriesBtn").addEventListener("click", function () {
+            document.getElementById("categoryModal").classList.toggle("hidden");
+        });
+    });
+</script>
