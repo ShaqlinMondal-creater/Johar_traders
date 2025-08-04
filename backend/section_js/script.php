@@ -22,7 +22,7 @@
         if (data.success) {
           // Remove all localStorage items
           localStorage.clear();
-          window.location.href = "../frontend/index.php";
+          window.location.href = "../index.php";
         } else {
           alert(data.message || "Logout failed.");
         }
@@ -33,7 +33,7 @@
     } else {
       // No token found, just clear and redirect
       localStorage.clear();
-      window.location.href = "../frontend/index.php";
+      window.location.href = "../index.php";
     }
   });
 </script>
@@ -46,7 +46,7 @@
     // If not logged in or role != admin, redirect
     // if (!ad_role || !ad_token ) {
     //     alert("Not Okay");
-    //     // window.location.href = "../frontend/login.php";
+    //     // window.location.href = "../login.php";
     // }else{
     //     alert("okay");
     // }
@@ -109,8 +109,8 @@
                 products.forEach(product => {
                     const firstImage = product.photos.split(",")[0];
                     const imageSrc = firstImage
-                        ? `../frontend/Johar_traders_uploads/product/${firstImage}`
-                        : `../frontend/Johar_traders_uploads/placeholder.png`;
+                        ? `../Johar_traders_uploads/product/${firstImage}`
+                        : `../Johar_traders_uploads/placeholder.png`;
 
                     tbody.innerHTML += `
                         <tr class="table-row border-b">

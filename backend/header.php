@@ -5,7 +5,7 @@
 
   if (!token || role !== 'admin') {
     // If no token or role is not admin, redirect to login page
-    window.location.href = "../frontend/login.php";
+    window.location.href = "../login.php";
   }
 </script>
 
@@ -16,8 +16,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Johar Traders - Admin Panel</title>
-    <link rel="icon" href="../frontend/Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png">
-    <link rel="apple-touch-icon" href="../frontend/Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png">
+    <link rel="icon" href="../Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png">
+    <link rel="apple-touch-icon" href="../Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png">
     <!-- <script src="../connection/auth_check.js"></script> -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -72,7 +72,7 @@
             <!-- Logo -->
             <div class="flex items-center gap-4">
             <div class="flex items-center justify-center w-full">
-                <img src="../frontend/Johar_traders_uploads/logo/KLMIP2NATC-20190102-073826.png" 
+                <img src="../Johar_traders_uploads/logo/KLMIP2NATC-20190102-073826.png" 
                 alt="Company Logo" 
                 class="w-full max-w-[300px] md:max-w-[400px] h-auto object-contain">
             </div>
@@ -83,7 +83,7 @@
             <div class="relative">
                 <button class="flex items-center gap-2 bg-gray-100 px-4 py-2 rounded-lg hover:bg-gray-200 transition-colors">
                 <div class="w-8 h-8 bg-white rounded-full flex items-center justify-center text-white text-sm font-bold">
-                    <img src="../frontend/Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png" alt="User Logo" 
+                    <img src="../Johar_traders_uploads/logo/5N9MOS9NAN-20190102-073826.png" alt="User Logo" 
                     class="w-full max-w-[20px] md:max-w-[40px] h-auto object-contain">
                 </div>
                 <span id="adminUserName" class="text-gray-700">Admin User</span>

@@ -1,4 +1,4 @@
-<?php include '../connection/config.php'; ?>
+<?php include 'connection/config.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -125,7 +125,7 @@
 
           setTimeout(() => {
             if (data.data.role === 'admin') {
-              window.location.href = "../backend/admin_index.php";
+              window.location.href = "backend/admin_index.php";
             } else {
               window.location.href = "index.php";
             }
